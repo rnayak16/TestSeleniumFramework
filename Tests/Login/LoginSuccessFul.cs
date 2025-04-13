@@ -19,7 +19,7 @@ namespace TestFramework.Tests.Login
     public class LoginSuccessFul
     {
         
-        private WebDriverManager webDriverManager;
+        private CustomWebDriverManager webDriverManager;
         private LoginPage loginPage;
         //Logger logger = new Logger();
 
@@ -33,7 +33,7 @@ namespace TestFramework.Tests.Login
             //webDriverManager = new WebDriverManager();
 
             Logger.LogInfo("Inside setup Method");
-            webDriverManager = new WebDriverManager();
+            webDriverManager = new CustomWebDriverManager();
             var driver = webDriverManager.InitializeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.facebook.com/");

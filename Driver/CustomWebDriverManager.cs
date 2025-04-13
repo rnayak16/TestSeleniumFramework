@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace TestFramework.Driver
 {
-    public  class WebDriverManager
+    public  class CustomWebDriverManager
     {
         private IWebDriver? driver;
 
@@ -16,7 +18,8 @@ namespace TestFramework.Driver
         {
             if (driver == null)
             {
-                driver = new ChromeDriver("C:\\Users\\admin\\Desktop\\Radhika\\ChromeDriver\\ChromeDriver");
+                new DriverManager().SetUpDriver(new ChromeConfig());
+                driver = new ChromeDriver();
             }
             return driver;
         }
